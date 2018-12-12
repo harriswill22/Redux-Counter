@@ -1,3 +1,8 @@
+const {createStore} = require('redux')
+
+
+
+
 // #1 Write out an example/default version of my application state
 
 const defaultState  ={
@@ -43,4 +48,10 @@ const counter = (state=defaultState, action) =>{
     // else return the state as -is\
         return state;
     }
-}
+};
+// #4 - Create your store that knows how to use your reducer function
+const store = createStore(counter);
+
+
+
+
