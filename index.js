@@ -52,6 +52,18 @@ const counter = (state=defaultState, action) =>{
 // #4 - Create your store that knows how to use your reducer function
 const store = createStore(counter);
 
+// You can subscribe to notifications of any changes to the state
+store.subscribe(() =>{
+    const theState = store.getState();
+    console.log(`The state is now: ${theState.count}`);
+});
+
+module.exports ={
+    store,
+    ACTION_INC,
+    ACTION_DEC
+};
+
 
 
 
