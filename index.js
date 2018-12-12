@@ -31,6 +31,22 @@ const ACTION_INC ={
 const ACTION_DEC ={
     type: 'DECREMENT '
 };
+// "Action Creators"
+// When you need to configure an action, write a function
+const incrementCounter =(id) =>{
+    return{
+        ...ACTION_INC,
+        id
+    }
+};
+
+
+const decrementCounter =(id) =>{
+    return{
+        ...ACTION_DEC,
+        id
+    }
+};
 // #3 - Write a pure function that accepts the current state and action then return the new version of state
 
 const counter = (state=defaultState, action) =>{
