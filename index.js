@@ -55,7 +55,17 @@ const counter = (state=defaultState, action) =>{
         // if it's 'INCREMENT', return a new state object with th e count +1
         case ACTION_INC.type:
         return{
-            count: state.count +1
+            //count: state.count +1
+            counters: state.counters.map(oneCounter =>{
+                if (oneCounter.id === action.id){
+                    return{
+                        ...oneCounter,
+                        count: oneCounter.count + 1
+                    }
+                }else{
+                    return oneCounter;
+                }
+            })
         };
     
         case ACTION_DEC.type:
